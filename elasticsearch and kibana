@@ -1,0 +1,71 @@
+Setup LAMP in centos7:
+-----------------------
+sudo -i
+yum update -y
+yum install httpd -y
+systemctl start httpd.service 
+open browser and check apache loading : http://3.88.5.113/
+yum install mariadb-server mariadb -y
+systemctl start mariadb
+mysql_secure_installation (set password for root)
+systemctl enable mariadb.service
+yum install php php-mysql -y
+systemctl restart httpd.service
+
+ref for LAMP : https://hostadvice.com/how-to/how-to-install-lamp-stack-on-centos-7/ 
+
+setup elasticsearch:
+--------------------
+curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o /etc/yum.repos.d/opendistroforelasticsearch-artifacts.repo
+yum install java-1.8.0-openjdk-devel -y
+yum list opendistroforelasticsearch --showduplicates
+yum install opendistroforelasticsearch-1.2.0
+ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/
+service elasticsearch start 
+service elasticsearch status
+vi /etc/elasticsearch/elasticsearch.yml
+search for below line in above file and change host like below:
+
+from : network.host: 192.168.0.1 to   network.host: localhost 
+
+run in server :
+curl -XGET https://localhost:9200 -u admin:admin --insecure
+
+expected output:
+{
+  "name" : "ip-172-31-41-103.ec2.internal",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "Vz_MuccVQQ-UZiCdtl8BvA",
+  "version" : {
+    "number" : "7.2.0",
+    "build_flavor" : "oss",
+    "build_type" : "rpm",
+    "build_hash" : "508c38a",
+    "build_date" : "2019-06-20T15:54:18.811730Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.0.0",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+
+ref for elastic search: https://opendistro.github.io/for-elasticsearch-docs/docs/install/rpm/
+
+setup kibana in same server:
+--------------------
+sudo yum install opendistroforelasticsearch-kibana -y
+vi /etc/kibana/kibana.yml
+
+add below lines in above kibana config file:
+
+/etc/kibana/kibana.yml
+server.host: "0.0.0.0"
+server.port: 5601
+service httpd start 
+service kibana start 
+service elasticsearch start 
+
+ref for  Kibana : https://opendistro.github.io/for-elasticsearch-docs/docs/kibana/
+
+

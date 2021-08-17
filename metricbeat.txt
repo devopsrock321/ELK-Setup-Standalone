@@ -1,0 +1,170 @@
+    1  sudo curl https://d3g5vo6xdbdb9a.cloudfront.net/yum/opendistroforelasticsearch-artifacts.repo -o /etc/yum.repos.d/opendistroforelasticsearch-artifacts.repo
+    2  sudo yum install java-1.8.0-openjdk-devel
+    3  sudo yum list opendistroforelasticsearch --showduplicates
+    4  sudo yum install opendistroforelasticsearch-1.2.0
+    5  sudo ln -s /usr/lib/jvm/java-1.8.0/lib/tools.jar /usr/share/elasticsearch/lib/
+    6  sudo systemctl start elasticsearch.service
+    7  curl -XGET https://localhost:9200 -u admin:admin --insecure
+    8  vi /etc/elasticsearch/elasticsearch.yml
+    9  curl -XGET https://localhost:9200 -u admin:admin --insecure
+   10  history
+   11  systemctl status elasticsearch.service
+   12  sudo yum install opendistroforelasticsearch-kibana
+   13  vi /etc/kibana/kibana.yml
+   14  sudo yum install httpd24 php70 mysql-56-server php70-mysqlnd
+   15  yum install httpd
+   16  sudo service httpd start
+   17  sudo service ealsticsearch statu
+   18  sudo service ealsticsearch start
+   19  systemctl status elasticsearch.service
+   20  systemctl status httpd.service
+   21  vi /etc/kibana/kibana.yml
+   22  systemctl status kibana.service
+   23  systemctl start kibana.service
+   24  systemctl status kibana.service
+   25  systemctl status elasticsearch.service
+   26  vi /etc/kibana/kibana.yml
+   27  systemctl restart kibana.service
+   28  vi /etc/kibana/kibana.yml
+   29  systemctl restart kibana.service
+   30  cat /ar
+   31  cd /var/
+   32  ls
+   33  cd log
+   34  ls
+   35  systemctl restart elasticsearch.service
+   36  systemctl restart httpd.service
+   37  cat /arsystemctl restart kibana.service
+   38  systemctl restart kibana.service
+   39  vi /etc/kibana/kibana.yml
+   40  systemctl restart kibana.service
+   41  systemctl status kibana.service
+   42  systemctl status elasticsearch.service
+   43  systemctl start elasticsearch.service
+   44  systemctl status elasticsearch.service
+   45  systemctl status kibana.service
+   46  systemctl status httpd.service
+   47  cd /etc/kibana/
+   48  ls
+   49  vi kibana.yml
+   50  cd ..
+   51  ls
+   52  cd elasticsearch/
+   53  ls
+   54  vi elasticsearch.yml
+   55  systemctl restart elasticsearch.service
+   56  systemctl restart kibana.service
+   57  systemctl restart httpd.service
+   58  service start kibana
+   59  service kibana start
+   60  service kibana status
+   61  systemctl stop kibana.service
+   62  service kibana start
+   63  service kibana status
+   64  vi elasticsearch.yml
+   65  cd ..
+   66  cd kibana/
+   67  ls
+   68  cat kibana.yml
+   69  pwd
+   70  ls
+   71  vi kibana.yml
+   72  sudo service kibana restat
+   73  sudo service kibana restart
+   74  service kibana restart
+   75  service kibana status
+   76  service kibana stop
+   77  systemctl status kibana.service
+   78  service kibana stop
+   79  service kibana start
+   80  service kibana status
+   81  service kibana stop
+   82  systemctl status kibana.service
+   83  systemctl start kibana.service
+   84  systemctl stop kibana.service
+   85  systemctl restart elasticsearch.service
+   86  sudo service kibana restart
+   87  vi kibana.yml
+   88  sudo service kibana restart
+   89  systemctl status elasticsearch.service
+   90  systemctl stop elasticsearch.service
+   91  yum install logstash
+   92  yum install metricbeat
+   93  cd
+   94  yum install filebeat
+   95  history
+   96  cd /etc/metricbeat/
+   97  ls
+   98  cd modules.d/
+   99  ls
+  100  cd ..
+  101  metricbeat modules enable mysql
+  102  metricbeat modules list
+  103  ls
+  104  vi metricbeat.yml
+  105  pwd
+  106  sudo yum install yaml-lint
+  107  cd modules.d
+  108  ls
+  109  vi mysql.yml
+  110  sudo service metricbeat start
+  111  metricbeat run -e
+  112  ls
+  113  vi mysql.yml
+  114  metricbeat run -e
+  115  sudo service metricbeat restart
+  116  metricbeat run -e
+  117  vi mysql.yml
+  118  sudo service metricbeat restart
+  119  metricbeat run -e
+  120  sudo yum remove metricbeat
+  121  yum install https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.3.2-x86_64.rpm
+  122  ls
+  123  cat mysql.yml
+  124  cd ..
+  125  ls
+  126  cat metricbeat.yml
+  127  ls
+  128  vi metricbeat.yml.rpmsave
+  129  sudo service metricbeat start
+  130  metricbeat run -e
+  131  vi metricbeat.yml.rpmsave
+  132  ls
+  133*
+  134  sudo service metricbeat restart
+  135  metricbeat run -e
+  136  history
+  137  tail -f /var/log/metricbeat/metricbeat
+  138  metricbeat modules disable system
+  139  sudo service metricbeat restart
+  140  metricbeat run -e
+  141  tail -f /var/log/metricbeat/metricbeat.4
+  142  service metricbeat stop
+  143  cd /var/log/metricbeat/
+  144  ll
+  145  service metricbeat start
+  146  ll
+  147  metricbeat run -e
+  148  ll
+  149  tail -f metricbeat.5
+  150  tail -f metricbeat
+  151  metricbeat run -e
+  152  ll
+  153  metricbeat modules list
+  154  metricbeat modules disable mysql
+  155  service metricbeat restart
+  156  metricbeat run -e
+  157  ll
+  158  tail -f
+  159  tail -f metricbeat
+  160  metricbeat modules enable system
+  161  service metricbeat restart
+  162  metricbeat run -e
+  163  tail -f metricbeat | grep error
+  164  sudo service mysqld status
+  165  sudo service mysql status
+  166  metricbeat disable mysql
+  167  metricbeat modules disable mysql
+  168  metricbeat modules enable system
+  169  sudo service mysql statushistory
+  170  history
